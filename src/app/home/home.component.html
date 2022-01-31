@@ -18,7 +18,10 @@
                     </mat-option>
                   </mat-autocomplete>
             </mat-form-field>
-            <button class="btn" type="submit" mat-raised-button color="primary">Pesquisar</button>
+            <button class="btn" type="submit" mat-raised-button color="primary">
+                <mat-spinner *ngIf="btnValue" color="accent"></mat-spinner>
+                <h3 class="btnh3" *ngIf="!btnValue">Pesquisar</h3>
+            </button>
         </form>
 
     </mat-card>
@@ -63,5 +66,5 @@
     </div>
 
 
-    <button class="btn" mat-raised-button (click)="voltar()" color="primary">Pesquisar novamente</button>
+    <button class="btnBack" mat-raised-button (click)="voltar()" color="primary">Pesquisar novamente</button>
 </div>

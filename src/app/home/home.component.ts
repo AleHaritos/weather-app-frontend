@@ -66,6 +66,8 @@ export class HomeComponent implements OnInit {
   criadoStateToday: string = 'none'
   result: boolean = false
 
+  btnValue: boolean = false
+
   cities: any
   backClass: string = ''
   home: boolean = true
@@ -109,6 +111,7 @@ export class HomeComponent implements OnInit {
     if (this.forms.valid) {
       this.service.getWeather(this.forms.value.cityName)
         .subscribe((res: any) => {
+          this.btnValue = true
           //Temperaturas
           this.temperature = this.calcularTemp(res[0].current.temperature);
           this.maxToday = this.calcularTemp(res[0].forecast[1].high)
@@ -129,6 +132,8 @@ export class HomeComponent implements OnInit {
           if (res[0].forecast[1].skytextday.includes('Storm')) {
             this.backClass = 'backClassStorm'
           }
+
+          setTimeout(() => this.btnValue = false, 3000)
         })
     }
   }
@@ -150,6 +155,7 @@ export class HomeComponent implements OnInit {
     this.home = true
     this.criadoState = 'none'
     this.criadoStateToday = 'none'
+    this.btnValue = false
   }
 
   calcularTemp(valor: string): number {

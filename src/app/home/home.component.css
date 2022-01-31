@@ -52,6 +52,15 @@
 .btn {
     margin-top: 100px;
     width: 250px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnBack {
+    width: 250px;
+    margin-top: 100px;
 }
 
 .backClassRain {
@@ -197,6 +206,13 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 200;
 }
+mat-spinner {
+    zoom: 0.3;
+}
+
+.btnh3 {
+    margin-top: 10px;
+}
 
 @media (max-width: 700px) {
     .result {
@@ -260,6 +276,9 @@
         font-size: 0.8rem;
     }
 
+    .btnBack {
+        width: 210px;
+    }
 }
 
 @media  (max-width: 500px) {
@@ -274,3 +293,4 @@
         width: 100px;
     }
 }
+
