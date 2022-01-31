@@ -1,0 +1,67 @@
+ <mat-toolbar class="toolbar" *ngIf="home">
+    <h1 class="title">Weather</h1>
+ </mat-toolbar>
+
+<div class="content" *ngIf="home">
+    <mat-card class="subBar">
+
+        <form class="forms" [formGroup]="forms" (ngSubmit)="getWeather()">
+
+            <mat-form-field class="field" appearance="legacy">
+                <mat-label>Nome da cidade</mat-label>
+                <input type="text" matInput 
+                formControlName="cityName" (keyup)="pesquisarCidade()" [matAutocomplete]="auto">
+
+                <mat-autocomplete  #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of cities | async" [value]="option.name">
+                      {{ option.name }}
+                    </mat-option>
+                  </mat-autocomplete>
+            </mat-form-field>
+            <button class="btn" type="submit" mat-raised-button color="primary">Pesquisar</button>
+        </form>
+
+    </mat-card>
+</div>
+
+<div class="content2" [ngClass]="backClass" *ngIf="!home" [@backTrigger]="'show'" (@backTrigger.done)="changeStateResult($event)" style="background-repeat: no-repeat;">
+
+    <h1 class="title2">Previsão do tempo</h1>
+
+    <div class="result" [@result]="resultState" *ngIf="result" (@result.done)="today($event)">
+
+        <div class="today" [@today]="criadoStateToday" *ngIf="criadoStateToday === 'criado'" (@today.done)="tomorrow($event)">
+            <div class="min">        
+                   <h3><mat-icon class="icon">ac_unit</mat-icon>Mínima</h3>              
+                <h2 class="tempsMin">{{ minToday }}°C</h2>
+            </div>
+
+            <div class="atual">
+                <h3>Atual</h3>
+                <h2>{{ temperature }}°C</h2>
+            </div>
+
+            <div class="max">
+                <h3>Máxima<mat-icon class="icon">local_fire_department</mat-icon></h3>
+                <h2 class="temps">{{ maxToday }}°C</h2>
+            </div>
+        </div>
+
+
+        <div class="tomorrow" *ngIf="criadoState === 'criado'" [@tomorrow]="criadoState">
+            <h1>Para amanhã</h1>
+            <div class="min" style="margin-top: 30px;">        
+                <h3><mat-icon class="icon">ac_unit</mat-icon>Mínima</h3>              
+             <h2 class="tempsMin">{{ minTomorrow }}°C</h2>
+            
+             <div class="max">
+                <h3><mat-icon class="icon">local_fire_department</mat-icon>Máxima</h3>
+                <h2 class="temps" style="padding-left: 16px;">{{ maxTomorrow }}°C</h2>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+    <button class="btn" mat-raised-button (click)="voltar()" color="primary">Pesquisar novamente</button>
+</div>

@@ -1,0 +1,276 @@
+.toolbar {
+    height: 100px;
+    background: linear-gradient(to right, rgba(86, 18, 126, 0.993),rgba(123, 32, 175, 0.856), rgba(90, 3, 141, 0.795));
+    display: flex;
+    justify-content: center;
+    border-bottom: groove 2px rgba(65, 63, 63, 0.473);
+}
+
+.subBar {
+    width: 500px;
+    height: 350px;
+    background: rgba(255, 255, 255, 0.226);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    margin-top: 50px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 50px;
+    font-weight: 900;
+    text-shadow: rgb(141, 32, 214) 2px 5px;
+}
+
+.content {
+    height: 100%;
+    /* background-color: rgba(85, 82, 82, 0.521); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.field {
+    margin-top: 40px;
+    width: 300px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.btn {
+    margin-top: 100px;
+    width: 250px;
+}
+
+.backClassRain {
+    background-image: url('../../assets/rain.png');
+    opacity: 0.7;
+    background-size: cover;
+}
+
+.backClassCloudy {
+    background-image: url('../../assets/cloudy.jpg');
+    opacity: 0.7;
+    background-size: cover;
+}
+.backClassStorm {
+    background-image: url('../../assets/storm.jpg');
+    opacity: 0.7;
+    background-size: cover;
+}
+.backClassSunny {
+    background-image: url('../../assets/sunny.jpg');
+    opacity: 0.7;
+    background-size: cover;
+}
+
+.content2 {
+    height: 100%;
+    /* background-color: rgba(85, 82, 82, 0.521); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.result {
+    width: 800px;
+    height: 600px;
+    background: rgba(255, 255, 255, 0.226);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* margin-top: 50px; */
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 80px;
+}
+
+.today {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.min {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.min h3 {
+    color: rgb(29, 197, 197);
+    font-weight: 500;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.3rem;
+    text-shadow: black 1px 2px;
+}
+
+.icon {
+    position: relative;
+    top: 0;
+    font-size: 1.2rem;
+}
+
+.atual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.atual h3 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: #FFF;
+    text-shadow: black 2px 5px;
+}
+
+.atual h2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 4.5rem;
+    margin-top: 20px;
+}
+
+.max {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.max h3 {
+    color: rgb(204, 45, 33);
+    font-weight: 500;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.3rem;
+    text-shadow: black 1px 2px;
+}
+
+.tomorrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 110px;
+}
+
+.tomorrow h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: #FFF;
+    text-shadow: black 2px 5px;
+    font-style: italic;
+}
+
+.tempsMin {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 200;
+    padding-left: 16px;
+}
+
+.temps {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 200;
+}
+
+@media (max-width: 700px) {
+    .result {
+        width: 400px;
+        height: 600px;
+    }
+
+    .min h3 {
+        font-size: 1rem;
+    }
+
+    .max h3 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .result {
+        width: 200px;
+        height: 600px;
+    }
+
+    .title2 {
+        font-size: 20px;
+    }
+
+    .atual h3 {
+        font: 1.5rem;
+    }
+
+    .atual h2 {
+        font-size: 2rem;
+    }
+
+    .atual {
+        margin-top: 150px;
+    }
+
+    .min h3 {
+        font-size: 0.8rem;
+    }
+
+    .max h3 {
+        font-size: 0.8rem;
+    }
+
+    .tomorrow {
+        margin-top: 30px;
+    }
+
+    .tomorrow h1 {
+        font-size: 1.5rem;
+    }
+
+    .tempsMin {
+        font-size: 0.8rem;
+        padding-left: 0px;
+    }
+
+    .temps {
+        font-size: 0.8rem;
+    }
+
+}
+
+@media  (max-width: 500px) {
+    .subBar {
+        width: 250px;
+    }
+    .field {
+        width: 200px;
+    }
+
+    .btn {
+        width: 100px;
+    }
+}
